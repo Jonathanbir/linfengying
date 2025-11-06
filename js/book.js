@@ -30,16 +30,12 @@ $(function () {
 
   const bookHeight = window.innerHeight;
   const bookWidth = bookHeight * (1200 / 600); // 保持原始比例 1200:600
-  const width = screen.width;
-  const height = screen.height;
+  // const width = screen.width;
+  // const height = screen.height;
 
-  console.log('瀏覽器視窗寬度:', width);
-  console.log('瀏覽器視窗高度:', height);
-  console.log('新的寬高:', bookWidth, bookHeight);
   $(window).on('resize', function () {
     const newHeight = window.innerHeight;
     const newWidth = window.innerWidth;
-    console.log('新的寬高:', newWidth, newHeight);
     $('#flipbook').turn('size', newWidth, newHeight);
   });
 
@@ -50,7 +46,6 @@ $(function () {
       width: 1200,
       height: 600,
       autoCenter: true,
-      disableCorners: [1],
     });
   } else {
     // 初始化 turn.js
@@ -707,34 +702,36 @@ $(function () {
     // });
 
     //滑動翻頁
-    // let touchStartX = 0;
-    // let touchEndX = 0;
+    // if (window.matchMedia('(max-height: 500px)').matches) {
+    //   let touchStartX = 0;
+    //   let touchEndX = 0;
 
-    // const flipbook = document.getElementById('flipbook');
+    //   const flipbook = document.getElementById('flipbook');
 
-    // flipbook.addEventListener('touchstart', function (e) {
-    //   touchStartX = e.changedTouches[0].screenX;
-    // });
+    //   flipbook.addEventListener('touchstart', function (e) {
+    //     touchStartX = e.changedTouches[0].screenX;
+    //   });
 
-    // flipbook.addEventListener('touchend', function (e) {
-    //   touchEndX = e.changedTouches[0].screenX;
-    //   handleSwipe();
-    // });
+    //   flipbook.addEventListener('touchend', function (e) {
+    //     touchEndX = e.changedTouches[0].screenX;
+    //     handleSwipe();
+    //   });
 
-    // function handleSwipe() {
-    //   const swipeDistance = touchEndX - touchStartX;
+    //   function handleSwipe() {
+    //     const swipeDistance = touchEndX - touchStartX;
 
-    //   if (Math.abs(swipeDistance) < 30) {
-    //     // 忽略太短的滑動
-    //     return;
-    //   }
+    //     if (Math.abs(swipeDistance) < 30) {
+    //       // 忽略太短的滑動
+    //       return;
+    //     }
 
-    //   if (swipeDistance < 0) {
-    //     // 向左滑（下一頁）
-    //     $('#flipbook').turn('next');
-    //   } else {
-    //     // 向右滑（上一頁）
-    //     $('#flipbook').turn('previous');
+    //     if (swipeDistance < 0) {
+    //       // 向左滑（下一頁）
+    //       $('#flipbook').turn('next');
+    //     } else {
+    //       // 向右滑（上一頁）
+    //       $('#flipbook').turn('previous');
+    //     }
     //   }
     // }
   });
