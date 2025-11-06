@@ -1323,8 +1323,6 @@ audio {
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
-  animation: cowMove 2s ease-in-out infinite;
-  transition: all 1s ease-in-out;
   animation: dialogKnockShow 2s ease-in-out infinite;
   transition: all 1s ease-in-out;
 }
@@ -1456,6 +1454,185 @@ audio {
   50% {
     margin-left: 2px;
   }
+}
+
+.girl-click-region {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+  width: 450px;
+  height: 490px;
+  z-index: 99;
+  cursor: pointer;
+}
+
+.little-girl {
+  position: absolute;
+  right: 34px;
+  bottom: -4px;
+  z-index: 2;
+  width: 500px;
+  height: 499px;
+  background-size: 100%;
+  background-image: url(./images/object/little-girl.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.flower {
+  position: absolute;
+  z-index: 1;
+  width: 85px;
+  height: 67px;
+  background-size: 100%;
+  background-image: url(./images/object/flower.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 1.5s ease-in-out;
+}
+
+.flower01 {
+  right: 34%;
+  top: 29%;
+  transform: rotate(-180deg);
+}
+
+.flower01-finish {
+  right: 14%;
+  top: 29%;
+  width: 60px;
+  height: 50px;
+  transform: rotate(0deg);
+}
+
+.flower02 {
+  right: 40%;
+  top: 57%;
+  transform: rotate(180deg);
+}
+
+.flower02-finish {
+  right: 23%;
+  top: 57%;
+  width: 67px;
+  height: 50px;
+  transform: rotate(-21deg);
+}
+
+.flower03 {
+  right: 38%;
+  top: 79%;
+  transform: rotate(180deg);
+}
+
+.flower03-finish {
+  right: 18%;
+  top: 69%;
+  width: 90px;
+  height: 80px;
+  transform: rotate(0deg);
+}
+
+.flower04 {
+  left: 38%;
+  top: 40%;
+  transform: rotate(-180deg);
+}
+
+.flower04-finish {
+  left: 8%;
+  top: 52%;
+  width: 140px;
+  height: 120px;
+  transform: rotate(29deg);
+}
+
+.flower05 {
+  left: 40%;
+  top: 37%;
+  transform: rotate(-180deg);
+}
+
+.flower05-finish {
+  left: 10%;
+  top: 37%;
+  width: 75px;
+  height: 65px;
+  transform: rotate(0deg);
+}
+
+.flower06 {
+  left: 36%;
+  top: 37%;
+  transform: rotate(0deg);
+}
+
+.flower06-finish {
+  left: 26%;
+  top: 17%;
+  width: 120px;
+  height: 90px;
+  transform: rotate(-127deg);
+}
+
+.girl-l-hand {
+  position: absolute;
+  right: 55%;
+  bottom: 90px;
+  z-index: 3;
+  width: 138px;
+  height: 185px;
+  background-size: 100%;
+  background-image: url(./images/object/girl-l-hand.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 1.5s ease-in-out;
+}
+
+.girl-l-hand-finish {
+  right: 53%;
+  bottom: 150px;
+  transform: rotate(25deg);
+}
+
+.girl-l-hand-finish-milk {
+  background-image: url(./images/object/girl-l-hand-finish.png);
+}
+
+.girl-r-hand {
+  position: absolute;
+  right: 33%;
+  bottom: 45px;
+  z-index: 3;
+  width: 190px;
+  height: 161px;
+  background-size: 100%;
+  background-image: url(./images/object/girl-r-hand.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 1.5s ease-in-out;
+}
+
+.girl-r-hand-finish {
+  transform: rotate(39deg);
+  right: 34%;
+  bottom: 108px;
+}
+
+.click-girl {
+  position: absolute;
+  z-index: 9;
+  left: 2%;
+  top: 19%;
+  width: 180px;
+  height: 200px;
+  background-image: url(./images/dialog/click-girl.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  animation: dialogKnockShow 2s ease-in-out infinite;
+  transition: all 1s ease-in-out;
 }
 
 .cow-right {
@@ -2036,5 +2213,31 @@ audio {
 
   .mow {
     top: 240px;
+  }
+
+  .little-girl {
+    position: absolute;
+    right: 25px;
+    bottom: -36px;
+    width: 400px;
+    height: 450px;
+  }
+
+  .girl-l-hand {
+    width: 100px;
+    height: 155px;
+  }
+
+  .girl-r-hand {
+    width: 150px;
+  }
+
+  .girl-l-hand-finish {
+    bottom: 120px;
+  }
+
+  .girl-r-hand-finish {
+    right: 37%;
+    bottom: 60px;
   }
 }

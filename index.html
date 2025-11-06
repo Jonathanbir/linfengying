@@ -239,6 +239,23 @@
           <audio id="audio-13" controls>
             <source src="./mp3/13.mp3" type="audio/mpeg" />
           </audio>
+          <audio id="drinking-milk" controls>
+            <source src="./mp3/drinking-liquid.mp3" type="audio/mpeg" />
+          </audio>
+          <div class="girl-click-region"></div>
+          <div class="click-girl"></div>
+          <div class="little-girl"></div>
+          <div class="flower flower01"></div>
+          <div class="flower flower02"></div>
+          <div class="flower flower03"></div>
+          <div class="flower flower04"></div>
+          <div class="flower flower05"></div>
+          <div class="flower flower06"></div>
+          <div class="girl-l-hand"></div>
+          <div class="girl-r-hand"></div>
+          <audio id="flower-show" controls>
+            <source src="./mp3/victory.mp3" type="audio/mpeg" />
+          </audio>
           <div class="book book26"></div>
         </div>
         <div class="page">
@@ -283,6 +300,21 @@
 
       // 當裝置旋轉時重新檢查
       window.addEventListener('resize', checkOrientation);
+
+      // 當裝置旋轉時重新載入
+      let previous = window.orientation;
+
+      window.addEventListener('orientationchange', function () {
+        const current = window.orientation;
+
+        // 0 或 180 = 直向
+        // 90 或 -90 = 橫向
+        if ((previous === 0 || previous === 180) && (current === 90 || current === -90)) {
+          location.reload();
+        }
+
+        previous = current;
+      });
     </script>
   </body>
   <script src="./js/book.js"></script>

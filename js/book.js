@@ -395,10 +395,50 @@ $(function () {
       setTimeout(() => {
         $('.milk-drop').removeClass('milk-drop-show');
       }, 6000);
+
+      //點擊小女孩喝牛奶動畫
+      $('#flipbook .girl-click-region').on('click', function () {
+        $('#flipbook .click-girl').css('display', 'none');
+        $('#flipbook .girl-l-hand').addClass('girl-l-hand-finish');
+        $('#flipbook .girl-r-hand').addClass('girl-r-hand-finish');
+
+        setTimeout(() => {
+          $('.girl-l-hand').addClass('girl-l-hand-finish-milk');
+        }, 1000);
+        const drinkingMilkSound = document.getElementById('drinking-milk');
+
+        setTimeout(() => {
+          drinkingMilkSound.currentTime = 0;
+          drinkingMilkSound.play().catch(() => {
+            console.log('播放被瀏覽器阻止，請點擊頁面後再播放。');
+          });
+        }, 1000);
+
+        setTimeout(() => {
+          const flowerShow = document.getElementById('flower-show');
+          flowerShow.currentTime = 0;
+          flowerShow.play().catch(() => {
+            console.log('播放被瀏覽器阻止，請點擊頁面後再播放。');
+          });
+          $('#flipbook .flower01').addClass('flower01-finish');
+          $('#flipbook .flower02').addClass('flower02-finish');
+          $('#flipbook .flower03').addClass('flower03-finish');
+          $('#flipbook .flower04').addClass('flower04-finish');
+          $('#flipbook .flower05').addClass('flower05-finish');
+          $('#flipbook .flower06').addClass('flower06-finish');
+        }, 2500);
+      });
     } else {
-      $('.milk-hand').removeClass('milk-hand-animation');
-      $('.milk-drop').removeClass('milk-drop-show');
-      $('.milk-inner').removeClass('milk-inner-full');
+      $('#flipbook .click-girl').css('display', 'block');
+      $('#flipbook .girl-l-hand').removeClass('girl-l-hand-finish');
+      $('#flipbook .girl-r-hand').removeClass('girl-r-hand-finish');
+      $('.girl-l-hand').removeClass('girl-l-hand-finish-milk');
+      $('#flipbook .flower01').removeClass('flower01-finish');
+      $('#flipbook .flower02').removeClass('flower02-finish');
+      $('#flipbook .flower03').removeClass('flower03-finish');
+      $('#flipbook .flower04').removeClass('flower04-finish');
+      $('#flipbook .flower05').removeClass('flower05-finish');
+      $('#flipbook .flower06').removeClass('flower06-finish');
     }
 
     if (page === 28 || page === 29) {
